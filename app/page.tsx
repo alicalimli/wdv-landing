@@ -1,17 +1,9 @@
-"use client";
-
 import Image from "next/image";
-
-import { Swiper, SwiperSlide } from "swiper/react";
-
-// Import Swiper styles
-import "swiper/css";
-import "swiper/css/effect-cards";
-import { EffectCards } from "swiper/modules";
+import SwipePreviews from "./swipe-previews";
 
 export default function Home() {
   return (
-    <main className="min-h-screen relative overflow-x-hidden px-vw-28 mx-auto flex flex-col p-8">
+    <main className="min-h-screen overflow-y-hidden mb-16 relative overflow-x-hidden px-vw-28 mx-auto flex flex-col p-8">
       <nav className="flex items-center">
         <Image
           src="/wdv-logo.png"
@@ -25,17 +17,17 @@ export default function Home() {
         </button>
       </nav>
 
-      <div className="flex-1 flex flex-col xl:flex-row gap-8 items-center">
-        <div className="mt-24 xl:mt-0 xl:pr-[600px] 2xl:pr-[800px]">
-          <h1 className="text-6xl font-bold">
+      <div className="flex-1 flex flex-col gap-20 items-center mt-24">
+        <div className="text-center flex flex-col gap-2 items-center max-w-3xl">
+          <h1 className="text-5xl font-semibold">
             Visuals to level up your frontend skills
           </h1>
-          <p className="opacity-80 text-lg max-w-2xl mt-4">
+          <p className="opacity-80 max-w-xl text-lg">
             Browse 50+ visuals that would take your web dev skills to the next
             level
           </p>
 
-          <div className="flex flex-col gap-2 w-full max-w-2xl mt-2">
+          <div className="flex flex-col gap-2 w-full max-w-2xl mt-4">
             <iframe
               src="https://embeds.beehiiv.com/990fd037-3107-4dfb-af18-beb09d4805c3?slim=true"
               data-test-id="beehiiv-embed"
@@ -56,57 +48,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="w-full sm:w-[500px] 2xl:w-[700px] xl:absolute xl:right-36">
-          <Swiper
-            effect={"cards"}
-            grabCursor={true}
-            modules={[EffectCards]}
-            className="mySwiper"
-          >
-            <SwiperSlide>
-              {" "}
-              <div className="relative w-full aspect-square">
-                <Image
-                  src="/flex-visual.png"
-                  fill
-                  className="object-contain"
-                  alt="visual demonstrating flex and flex wrap property in CSS"
-                />
-              </div>
-            </SwiperSlide>
-            <SwiperSlide>
-              {" "}
-              <div className="relative w-full aspect-square">
-                <Image
-                  src="/flex-visual.png"
-                  fill
-                  className="object-contain"
-                  alt="visual demonstrating flex and flex wrap property in CSS"
-                />
-              </div>
-            </SwiperSlide>
-            <SwiperSlide>
-              {" "}
-              <div className="relative w-full aspect-square">
-                <Image
-                  src="/flex-visual.png"
-                  fill
-                  className="object-contain"
-                  alt="visual demonstrating flex and flex wrap property in CSS"
-                />
-              </div>
-            </SwiperSlide>
-          </Swiper>
-        </div>
-
-        {/* <div className="relative w-full aspect-square ">
-          <Image
-            src="/flex-visual.png"
-            fill
-            className="object-contain"
-            alt="visual demonstrating flex and flex wrap property in CSS"
-          />
-        </div> */}
+        <SwipePreviews />
       </div>
     </main>
   );
