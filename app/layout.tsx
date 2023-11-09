@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import Script from "next/script";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -26,6 +27,22 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <Script
+        strategy="lazyOnload"
+        src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_KEY}`}
+      />
+
+      <Script id="ga-script" strategy="lazyOnload">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', '${process.env.NEXT_PUBLIC_GA_KEY}', {
+            page_path: window.location.pathname,
+          });
+        `}
+      </Script>
+
       <link rel="icon" href="/favicon.png" sizes="any" />
 
       <body className={inter.className}>{children}</body>
