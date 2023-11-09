@@ -7,7 +7,7 @@ export default function Home() {
     <>
       {" "}
       <main className="min-h-screen overflow-y-hidden mb-16 relative overflow-x-hidden px-vw-28 mx-auto flex flex-col p-8">
-        <div className="flex-1 flex flex-col gap-20 items-center mt-32">
+        <div className="flex-1 flex flex-col gap-16 items-center mt-32">
           <div className="text-center flex flex-col gap-2 items-center max-w-3xl">
             <Image
               src="/wdv-logo.png"
@@ -46,7 +46,11 @@ export default function Home() {
             </div>
           </div>
 
-          <SwipePreviews />
+          <div className="relative w-full aspect-video max-w-3xl">
+            <video preload="" loop muted autoPlay controls>
+              <source src="/preview.mp4" />
+            </video>
+          </div>
         </div>
       </main>
       <Footer />
