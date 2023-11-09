@@ -1,5 +1,4 @@
 import Image from "next/image";
-import SwipePreviews from "./swipe-previews";
 import Footer from "./footer";
 
 export default function Home() {
