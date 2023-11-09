@@ -14,7 +14,7 @@ interface SwipePreviewsProps {}
 
 const SwipePreviews = ({}: SwipePreviewsProps) => {
   return (
-    <div className="w-[85%] lg:w-[40%] max-w-2xl">
+    <div className="w-[85%] xl:w-[40%] max-w-2xl">
       <Swiper
         effect={"cards"}
         autoplay={{
