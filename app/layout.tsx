@@ -1,9 +1,7 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
 import Script from "next/script";
-
-const inter = Inter({ subsets: ["latin"] });
+import { poppins } from "./fonts";
 
 export const metadata: Metadata = {
   title: "Web Development Visuals",
@@ -45,7 +43,7 @@ export default function RootLayout({
 
       <link rel="icon" href="/favicon.png" sizes="any" />
 
-      <body className={inter.className}>{children}</body>
+      <body className={`${poppins.className} antialiased`}>{children}</body>
     </html>
   );
 }

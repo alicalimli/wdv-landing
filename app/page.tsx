@@ -16,7 +16,7 @@ export default function Home() {
               alt="Website Logo"
             />
 
-            <h1 className="text-6xl font-semibold">
+            <h1 className="text-5xl font-bold">
               <span className="text-[#2563EB]">Visuals </span>to Level Up Your
               Front-end Skills
             </h1>
